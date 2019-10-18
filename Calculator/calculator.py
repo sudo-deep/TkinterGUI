@@ -2,14 +2,14 @@
 	CALCULATOR GUI
 """
 
-from tkinter import *
+from tkinter import *			#import package
 from math import sqrt, factorial
 
-class Calculator:
-    operators = ['+', '-', '*', '/']
+class Calculator:				#creates class
+    operators = ['+', '-', '*', '/']		#list of operators
 
     def __init__(self):
-        self.expresion_string = ''
+        self.expresion_string = ''		#initialization
         self.LoadWindow()
 
     def LoadWindow(self):
@@ -251,7 +251,7 @@ class Calculator:
             try:
                 if (self.expresion_string[-1] in self.operators):
                     result_operations = str(eval(self.expresion_string[:-1]))
-                else:
+                else:									#TRY CATCH USED TO PREVENT VALUE ERRORS AND BUGS
                     result_operations = str(eval(self.expresion_string))
                 self.textHolderResults.set(result_operations)
             except SyntaxError:
